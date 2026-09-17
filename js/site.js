@@ -22,6 +22,13 @@
   if (hv) {
     if (reduce) { hv.removeAttribute('autoplay'); hv.pause(); }
     else {
+      // Load the clip only after first paint so the poster is the LCP element and the 8 MB file never blocks it.
+      var loadVideo = function () {
+        if (hv.getAttribute('src')) return;
+        hv.setAttribute('src', hv.getAttribute(window.innerWidth >= 900 ? 'data-src-desktop' : 'data-src-mobile'));
+        hv.load(); hv.play().catch(function () {});
+      };
+      if ('requestIdleCallback' in window) requestIdleCallback(loadVideo, { timeout: 2500 }); else setTimeout(loadVideo, 1200);
       var vio = new IntersectionObserver(function (es) { es.forEach(function (e) { e.isIntersecting ? hv.play().catch(function(){}) : hv.pause(); }); }, { threshold: 0.05 });
       vio.observe(hv);
     }
