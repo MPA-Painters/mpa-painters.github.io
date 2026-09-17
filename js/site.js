@@ -1,6 +1,17 @@
 (function () {
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Language banner: offer Spanish when the browser prefers it, on English pages only. Never auto-redirect.
+  var banner = document.getElementById('lang-banner');
+  if (banner) {
+    var prefersEs = (navigator.languages || [navigator.language || '']).some(function (l) { return /^es\b/i.test(l); });
+    var dismissed = false;
+    try { dismissed = localStorage.getItem('mpa-lang-banner') === 'dismissed'; } catch (e) {}
+    if (prefersEs && !dismissed) banner.hidden = false;
+    var close = banner.querySelector('.lang-banner-close');
+    if (close) close.addEventListener('click', function () { banner.hidden = true; try { localStorage.setItem('mpa-lang-banner', 'dismissed'); } catch (e) {} });
+  }
+
   // Header shrink on scroll
   var header = document.querySelector('.site-header');
   function onScroll() { header.classList.toggle('is-scrolled', window.scrollY > 24); }
@@ -115,19 +126,19 @@
       var data = {};
       new FormData(f).forEach(function (v, k) { data[k] = v; });
       if (!data.name || !data.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email) || (f.querySelector('textarea[required]') && !data.message)) {
-        status.textContent = 'Please fill in your name, a valid email, and a message.'; status.className = 'form-status is-error'; return;
+        status.textContent = f.getAttribute('data-msg-invalid'); status.className = 'form-status is-error'; return;
       }
-      btn.disabled = true; status.textContent = 'Sending\u2026'; status.className = 'form-status';
+      btn.disabled = true; status.textContent = f.getAttribute('data-msg-sending'); status.className = 'form-status';
       fetch(f.getAttribute('action'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
         .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
         .then(function (res) {
-          if (res.ok) { f.classList.add('is-sent'); status.textContent = 'Received. We will be in touch.'; status.className = 'form-status is-ok'; }
+          if (res.ok) { f.classList.add('is-sent'); status.textContent = f.getAttribute('data-msg-sent'); status.className = 'form-status is-ok'; }
           else { throw new Error(res.j && res.j.error || 'send failed'); }
         })
         .catch(function (err) {
           btn.disabled = false;
           var mail = f.querySelector('.form-fallback a');
-          status.innerHTML = 'Could not send (' + String(err.message).replace(/</g, '&lt;') + '). Please email ' + (mail ? mail.outerHTML : 'us') + '.';
+          status.innerHTML = f.getAttribute('data-msg-failed') + ' ' + (mail ? mail.outerHTML : '') + ' (' + String(err.message).replace(/</g, '&lt;') + ')';
           status.className = 'form-status is-error';
         });
     });

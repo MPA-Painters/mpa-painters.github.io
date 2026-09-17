@@ -109,6 +109,17 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar::before { transform: translateY(8px) rotate(45deg); }
 .nav-toggle[aria-expanded="true"] .nav-toggle-bar::after { transform: translateY(-8px) rotate(-45deg); }
 
+/* ---------- language ---------- */
+.nav-lang a { font-family: var(--font-display); font-weight: 700; font-size: .9rem; letter-spacing: .08em; border: 2px solid var(--line); border-radius: 999px; padding: .3rem .7rem !important; color: var(--navy); }
+.nav-lang a:hover { border-color: var(--navy); color: var(--navy); }
+.nav-lang a::after { display: none !important; }
+.lang-banner { background: var(--navy); color: #fff; }
+.lang-banner[hidden] { display: none; }
+.lang-banner-inner { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; padding: .6rem 0; font-size: .95rem; }
+.lang-banner .btn { padding: .45rem 1rem; font-size: .9rem; }
+.lang-banner-close { background: none; border: 0; color: #fff; font-size: 1.5rem; line-height: 1; cursor: pointer; padding: 0 .25rem; opacity: .8; }
+.lang-banner-close:hover { opacity: 1; }
+
 /* ---------- hero ---------- */
 .hero { position: relative; overflow: hidden; background: radial-gradient(120% 90% at 85% 10%, var(--navy) 0%, var(--navy-3) 45%, var(--navy-4) 100%); color: #fff; }
 .hero-bg { position: absolute; inset: 0; opacity: 1; }

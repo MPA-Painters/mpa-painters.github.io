@@ -1,11 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://mpapainters.com/</loc></url>
-  <url><loc>https://mpapainters.com/services/</loc></url>
-  <url><loc>https://mpapainters.com/projects/</loc></url>
-  <url><loc>https://mpapainters.com/about/</loc></url>
-  <url><loc>https://mpapainters.com/safety/</loc></url>
-  <url><loc>https://mpapainters.com/careers/</loc></url>
-  <url><loc>https://mpapainters.com/subcontractors/</loc></url>
-  <url><loc>https://mpapainters.com/contact/</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url><loc>https://mpapainters.com/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/"/>
+  </url>
+  <url><loc>https://mpapainters.com/services/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/servicios/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/services/"/>
+  </url>
+  <url><loc>https://mpapainters.com/projects/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/proyectos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/projects/"/>
+  </url>
+  <url><loc>https://mpapainters.com/about/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/nosotros/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/about/"/>
+  </url>
+  <url><loc>https://mpapainters.com/safety/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/safety/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/safety/"/>
+  </url>
+  <url><loc>https://mpapainters.com/careers/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/empleo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/careers/"/>
+  </url>
+  <url><loc>https://mpapainters.com/subcontractors/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/subcontractors/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/subcontratistas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/subcontractors/"/>
+  </url>
+  <url><loc>https://mpapainters.com/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/contact/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/servicios/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/services/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/servicios/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/services/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/proyectos/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/projects/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/proyectos/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/projects/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/nosotros/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/nosotros/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/about/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/seguridad/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/safety/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/seguridad/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/safety/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/empleo/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/careers/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/empleo/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/careers/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/subcontratistas/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/subcontractors/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/subcontratistas/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/subcontractors/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/contacto/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/contacto/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/contact/"/>
+  </url>
 </urlset>

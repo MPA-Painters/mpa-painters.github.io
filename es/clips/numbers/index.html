@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MPA clip: en números</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+  html, body { height: 100%; margin: 0; overflow: hidden; }
+  body { background: radial-gradient(120% 90% at 85% 10%, var(--navy) 0%, var(--navy-3) 45%, var(--navy-4) 100%); color: #fff; font-family: var(--font-body); }
+  .clip { position: relative; width: 100vw; height: 100vh; display: grid; place-items: center; overflow: hidden; }
+  .clip-glow { position: absolute; width: 70vmin; height: 70vmin; border-radius: 50%; filter: blur(80px); opacity: .3; }
+  .clip-glow.a { background: var(--sky); top: -25vmin; right: -15vmin; }
+  .clip-glow.b { background: var(--red); bottom: -35vmin; left: -20vmin; }
+  .clip-inner { position: relative; width: min(92vw, 1600px); height: 86vh; display: grid; gap: 3vmin; align-items: center; }
+  .clip-logo { position: absolute; top: 0; left: 0; height: 12vmin; }
+  .clip-footer { position: absolute; bottom: 0; left: 0; right: 0; display: flex; justify-content: space-between; font-family: var(--font-display); font-weight: 600; letter-spacing: .12em; text-transform: uppercase; font-size: 2.2vmin; color: var(--sky); }
+  .clip h1 { color: #fff; font-size: 8vmin; line-height: 1; letter-spacing: -.03em; margin: 0 0 2vmin; }
+  .clip h1 .accent { color: var(--sky); }
+  .clip .lead { color: rgba(255,255,255,.88); font-size: 3vmin; max-width: 40ch; }
+  /* landscape: two columns; portrait: stacked */
+  @media (min-aspect-ratio: 1/1) { .clip-inner { grid-template-columns: 1fr 1fr; padding-top: 14vmin; } }
+  @media (max-aspect-ratio: 1/1) { .clip-inner { grid-template-rows: auto 1fr; padding-top: 16vmin; } .clip h1 { font-size: 9vmin; } }
+  .nums { display: grid; grid-template-columns: 1fr 1fr; gap: 3vmin; }
+  .num { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-radius: 2vmin; padding: 3vmin; position: relative; overflow: hidden; }
+  .num::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: .8vmin; background: linear-gradient(180deg, var(--red), var(--sky)); }
+  .num b { display: block; font-family: var(--font-display); font-weight: 800; font-size: 9vmin; line-height: 1; letter-spacing: -.03em; color: #fff; }
+  .num span { display: block; margin-top: 1vmin; color: var(--sky); font-size: 2.4vmin; }
+  @media (max-aspect-ratio: 1/1) { .nums { grid-template-columns: 1fr 1fr; } .num b { font-size: 8vmin; } }
+</style>
+</head>
+<body>
+<div class="clip">
+  <div class="clip-glow a"></div><div class="clip-glow b"></div>
+  <div class="clip-inner">
+    <img class="clip-logo" src="/img/logo-white.png" alt="MPA Painters">
+<div>
+  <h1>Pintura de producción, <span class="accent">hecha al Método MPA.</span></h1>
+  <p class="lead">MPA Painters, Elizabeth, Nueva Jersey. Pintura de producción para construcción nueva desde 2013.</p>
+</div>
+<div class="nums">
+  <div class="num" data-duration="9000"><b data-countto="50" data-suffix="+" data-start="400" data-dur="1600">0</b><span>Pintores, líderes de cuadrilla y PMs W-2</span></div>
+  <div class="num"><b data-countto="25" data-start="1200" data-dur="1600">0</b><span>Obras activas en todo momento</span></div>
+  <div class="num"><b data-countto="90" data-suffix="%" data-start="2000" data-dur="1600">0</b><span>Ingresos de clientes recurrentes y referidos</span></div>
+  <div class="num"><b data-countto="3" data-start="2800" data-dur="1200">0</b><span>Estados: NJ, NY, PA</span></div>
+</div>
+    <div class="clip-footer"><span>mpapainters.com</span><span>NJ · NY · PA</span></div>
+  </div>
+</div>
+<script src="/js/scenes.js"></script>
+</body>
+</html>
