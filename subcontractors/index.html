@@ -112,10 +112,24 @@
       <h2>Let's get started.</h2>
     </div>
     <div class="reveal">
-      <div class="contact-card">
-        <p>Email your company name, contact person, trade capacity, and the documents listed above to:</p>
-        <p><a class="big-link" href="mailto:client@mpapainters.com?subject=Subcontractor%20prequalification">client@mpapainters.com</a></p>
-        <p>Or call <a href="tel:+19088455700">(908) 845-5700</a> and ask for operations.</p>
+      <div class="contact-card contact-card-form">
+<form class="web-form" data-form="subs" action="https://mpa-web-forms.azurewebsites.net/api/submit" method="post" novalidate>
+  <input type="hidden" name="form" value="subs">
+  <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-grid">
+    <label>Name<span class="req">*</span><input type="text" name="name" required autocomplete="name"></label>
+    <label>Email<span class="req">*</span><input type="email" name="email" required autocomplete="email"></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+    <label>Company<input type="text" name="company" autocomplete="organization"></label>
+    <label>Trade capacity<input type="text" name="role" placeholder="Painters available, states you cover"></label>
+  </div>
+  <label class="full">Message<span class="req">*</span>    <textarea name="message" rows="5" required></textarea></label>
+  <div class="form-actions">
+    <button class="btn btn-red" type="submit">Start prequalification</button>
+    <span class="form-status" role="status" aria-live="polite"></span>
+  </div>
+  <p class="small form-fallback">Prefer email? <a href="mailto:subcompliance@mpapainters.com?subject=Start%20prequalification">subcompliance@mpapainters.com</a></p>
+</form>        <p class="small">We will reply with the document list and the Master Subcontractor Agreement.</p>
       </div>
     </div>
   </div>

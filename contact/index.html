@@ -96,11 +96,27 @@
       </div>
     </div>
     <div class="reveal">
-      <div class="contact-card contact-card-navy">
+      <div class="contact-card contact-card-form">
         <h2>Send us the project</h2>
-        <p>Email plans, specs, and the bid due date to <a class="big-link" href="mailto:bids@mpapainters.com?subject=Bid%20request">bids@mpapainters.com</a>. Plan-room links work fine.</p>
-        <p>In a hurry? Call <a href="tel:+19088455700">(908) 845-5700</a>.</p>
-      </div>
+        <p>Plans, specs, plan-room links, and the bid date. It lands in the bids mailbox.</p>
+<form class="web-form" data-form="bids" action="https://mpa-web-forms.azurewebsites.net/api/submit" method="post" novalidate>
+  <input type="hidden" name="form" value="bids">
+  <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-grid">
+    <label>Name<span class="req">*</span><input type="text" name="name" required autocomplete="name"></label>
+    <label>Email<span class="req">*</span><input type="email" name="email" required autocomplete="email"></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+    <label>Company<input type="text" name="company" autocomplete="organization"></label>
+    <label>Project<input type="text" name="project" placeholder="Name or address"></label>
+    <label>Bid due date<input type="date" name="bid_date"></label>
+  </div>
+  <label class="full">Scope, plan-room link, anything we should know<span class="req">*</span>    <textarea name="message" rows="5" required></textarea></label>
+  <div class="form-actions">
+    <button class="btn btn-red" type="submit">Request a bid</button>
+    <span class="form-status" role="status" aria-live="polite"></span>
+  </div>
+  <p class="small form-fallback">Prefer email? <a href="mailto:bids@mpapainters.com?subject=Request%20a%20bid">bids@mpapainters.com</a></p>
+</form>      </div>
       <div class="map">
         <iframe title="Map to MPA Painters office" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=430+Schiller+Street,+Elizabeth,+NJ+07206&output=embed"></iframe>
       </div>

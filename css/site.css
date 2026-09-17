@@ -347,7 +347,23 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .contact-card-navy { background: var(--navy); color: #fff; }
 .contact-card-navy h2 { color: #fff; }
 .contact-card-navy a { color: var(--sky); }
-.ms-form { width: 100%; min-height: 720px; border: 0; border-radius: var(--r-lg); background: #fff; box-shadow: var(--shadow); }
+/* web forms */
+.contact-card-form { padding-top: 2rem; }
+.web-form label { display: block; font-weight: 600; font-size: .95rem; color: var(--navy-3); }
+.web-form .req { color: var(--red); margin-left: .15rem; }
+.web-form input, .web-form select, .web-form textarea { display: block; width: 100%; margin-top: .35rem; font: inherit; font-size: 1rem; padding: .75rem .9rem; border: 1.5px solid var(--line); border-radius: var(--r); background: #fff; color: var(--ink); transition: border-color .2s, box-shadow .2s; }
+.web-form input:focus, .web-form select:focus, .web-form textarea:focus { outline: none; border-color: var(--navy); box-shadow: 0 0 0 4px var(--sky-2); }
+.web-form textarea { resize: vertical; min-height: 130px; }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.25rem; margin-bottom: 1rem; }
+.web-form label.full { margin-bottom: 1.25rem; }
+.form-actions { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+.form-status { font-weight: 600; color: var(--navy); }
+.form-status.is-error { color: var(--red); }
+.form-status.is-ok { color: #1a7f4b; }
+.form-fallback { margin: 1rem 0 0; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.web-form.is-sent .form-grid, .web-form.is-sent label.full, .web-form.is-sent .form-actions .btn { display: none; }
+@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
 .map iframe { width: 100%; aspect-ratio: 16 / 10; border: 0; border-radius: var(--r-lg); }
 .cta-band { background: linear-gradient(120deg, var(--navy) 0%, var(--navy-3) 60%, var(--navy-4) 100%); color: #fff; border-radius: var(--r-lg); padding: clamp(2rem, 4vw, 3.5rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; position: relative; overflow: hidden; }
 .cta-band::before { content: ""; position: absolute; width: 40vw; height: 40vw; border-radius: 50%; background: var(--sky); filter: blur(80px); opacity: .25; right: -15vw; top: -20vw; }

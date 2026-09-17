@@ -107,6 +107,32 @@
     tlScroll(); window.addEventListener('scroll', tlScroll, { passive: true });
   }
 
+  // Web forms -> MPA forms endpoint
+  document.querySelectorAll('form.web-form').forEach(function (f) {
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var status = f.querySelector('.form-status'), btn = f.querySelector('button[type=submit]');
+      var data = {};
+      new FormData(f).forEach(function (v, k) { data[k] = v; });
+      if (!data.name || !data.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email) || (f.querySelector('textarea[required]') && !data.message)) {
+        status.textContent = 'Please fill in your name, a valid email, and a message.'; status.className = 'form-status is-error'; return;
+      }
+      btn.disabled = true; status.textContent = 'Sending\u2026'; status.className = 'form-status';
+      fetch(f.getAttribute('action'), { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) })
+        .then(function (r) { return r.json().then(function (j) { return { ok: r.ok && j.ok, j: j }; }); })
+        .then(function (res) {
+          if (res.ok) { f.classList.add('is-sent'); status.textContent = 'Received. We will be in touch.'; status.className = 'form-status is-ok'; }
+          else { throw new Error(res.j && res.j.error || 'send failed'); }
+        })
+        .catch(function (err) {
+          btn.disabled = false;
+          var mail = f.querySelector('.form-fallback a');
+          status.innerHTML = 'Could not send (' + String(err.message).replace(/</g, '&lt;') + '). Please email ' + (mail ? mail.outerHTML : 'us') + '.';
+          status.className = 'form-status is-error';
+        });
+    });
+  });
+
   // Project filters
   var chips = document.querySelectorAll('.chip[data-filter]');
   var projects = document.querySelectorAll('.project[data-type]');

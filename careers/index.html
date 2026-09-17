@@ -148,11 +148,26 @@
       <p class="lead">Every application gets an answer. Walk-ins welcome at the Elizabeth office during business hours.</p>
     </div>
     <div class="reveal">
-      <div class="contact-card">
-        <p>Email your name, phone number, the role you want, and a short summary of your experience to:</p>
-        <p><a class="big-link" href="mailto:client@mpapainters.com?subject=Employment%20application">client@mpapainters.com</a></p>
-        <p>Or call <a href="tel:+19088455700">(908) 845-5700</a> and ask for hiring.</p>
-        <p class="small">MPA Painters is an equal opportunity employer.</p>
+      <div class="contact-card contact-card-form">
+<form class="web-form" data-form="careers" action="https://mpa-web-forms.azurewebsites.net/api/submit" method="post" novalidate>
+  <input type="hidden" name="form" value="careers">
+  <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+  <div class="form-grid">
+    <label>Name<span class="req">*</span><input type="text" name="name" required autocomplete="name"></label>
+    <label>Email<span class="req">*</span><input type="email" name="email" required autocomplete="email"></label>
+    <label>Phone<input type="tel" name="phone" autocomplete="tel"></label>
+    <label>Position<select name="role">
+      <option value="">Select</option>
+<option>Painter</option><option>Crew Leader</option><option>Project Manager</option>    </select></label>
+    <label>Where you live<input type="text" name="location" placeholder="City, State"></label>
+  </div>
+  <label class="full">Experience    <textarea name="message" rows="5" ></textarea></label>
+  <div class="form-actions">
+    <button class="btn btn-red" type="submit">Apply</button>
+    <span class="form-status" role="status" aria-live="polite"></span>
+  </div>
+  <p class="small form-fallback">Prefer email? <a href="mailto:jobs@mpapainters.com?subject=Apply">jobs@mpapainters.com</a></p>
+</form>        <p class="small">MPA Painters is an equal opportunity employer.</p>
       </div>
     </div>
   </div>
