@@ -55,6 +55,7 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .small { font-size: .9rem; color: var(--ink-2); }
 .split { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 2.5rem 5rem; align-items: start; }
 .split-even { grid-template-columns: 1fr 1fr; align-items: center; }
+.split-middle { align-items: center; }
 .prose > :last-child { margin-bottom: 0; }
 .prose p { font-size: 1.05rem; }
 .brand-stripe { height: 4px; background: linear-gradient(90deg, var(--red) 0 34%, var(--sky) 34% 60%, var(--navy) 60%); }
