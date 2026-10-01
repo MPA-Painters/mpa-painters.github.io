@@ -127,6 +127,8 @@
 
   // Web forms -> MPA forms endpoint
   document.querySelectorAll('form.web-form').forEach(function (f) {
+    var tf = f.querySelector('input[name=t]');
+    if (tf) tf.value = String(Date.now());
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = f.querySelector('.form-status'), btn = f.querySelector('button[type=submit]');
