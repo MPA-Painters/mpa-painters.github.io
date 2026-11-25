@@ -115,7 +115,7 @@
     </div>
     <div class="prose reveal">
       <ol class="numbered">
-        <li><strong>Envíe el formulario de precalificación</strong> con la información de su empresa, su capacidad y los documentos indicados arriba.</li>
+        <li><strong>Complete el formulario de precalificación</strong> con la información de su empresa, su capacidad y cuáles documentos del Paso 1 tiene.</li>
         <li><strong>Revisión de documentos.</strong> Nuestro equipo de operaciones revisa seguros, registros y prácticas de nómina. Es posible que le hagamos preguntas.</li>
         <li><strong>Contrato maestro.</strong> Las empresas aprobadas firman una sola vez el Contrato Maestro de Subcontratista de MPA.</li>
         <li><strong>Órdenes de trabajo.</strong> Cada asignación es una orden de trabajo por escrito: proyecto, alcance, cronograma y precio. Nada de acuerdos de palabra.</li>
@@ -130,11 +130,12 @@
     <div class="reveal reveal-left">
       <p class="eyebrow">Precalificar</p>
       <h2>Empecemos.</h2>
+      <p class="lead">La incorporación de subcontratistas tiene dos pasos. El Paso 1 es la revisión por parte de MPA Painters de los documentos listados aquí. Una vez aprobado, recibirá el paquete del Paso 2: Acuerdo Maestro de Subcontratista, Manual de Seguridad del Subcontratista y requisitos de seguro.</p>
     </div>
     <div class="reveal">
       <div class="contact-card contact-card-form">
-<form class="web-form" data-form="subs" action="https://mpa-web-forms.azurewebsites.net/api/submit" method="post" novalidate
-      data-msg-invalid="Por favor complete su nombre, un correo válido y un mensaje."
+<form class="web-form" data-form="subs" data-validate action="https://mpa-web-forms.azurewebsites.net/api/submit" method="post" novalidate
+      data-msg-invalid="Por favor complete los campos obligatorios."
       data-msg-sending="Enviando…"
       data-msg-sent="Recibido. Nos pondremos en contacto."
       data-msg-failed="No se pudo enviar. Por favor escriba a">
@@ -142,21 +143,91 @@
   <input type="hidden" name="lang" value="es">
   <input type="hidden" name="t" value="">
   <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-  <div class="form-grid">
-    <label>Nombre<span class="req">*</span><input type="text" name="name" required autocomplete="name"></label>
-    <label>Correo electrónico<span class="req">*</span><input type="email" name="email" required autocomplete="email"></label>
-    <label>Teléfono<input type="tel" name="phone" autocomplete="tel"></label>
-    <label>Empresa<input type="text" name="company" autocomplete="organization"></label>
-    <label>Capacidad del oficio<input type="text" name="role" placeholder="Pintores disponibles, estados que cubre"></label>
+
+  <fieldset>
+    <legend>Su empresa</legend>
+    <div class="form-grid">
+      <label>Empresa<span class="req">*</span><input type="text" maxlength="200" name="company" required autocomplete="organization"></label>
+      <label>Nombre de contacto<span class="req">*</span><input type="text" maxlength="200" name="name" required autocomplete="name"></label>
+      <label>Correo electrónico<span class="req">*</span><input type="email" maxlength="200" name="email" required autocomplete="email"></label>
+      <label>Teléfono<span class="req">*</span><input type="tel" maxlength="200" name="phone" required autocomplete="tel"></label>
+    </div>
+    <label class="full">Capacidad del oficio<input type="text" maxlength="200" name="role" placeholder="Pintores disponibles, estados que cubre"></label>
+  </fieldset>
+
+  <fieldset>
+    <legend>Documentos del Paso 1</legend>
+    <p class="form-hint">Estos documentos son necesarios para la preaprobación. Marque cuáles tiene.<span class="req">*</span></p>
+    <div class="doc-list">
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_w9">
+        <span class="doc-name" id="lbl-doc_w9">1. Formulario W-9, completado, firmado y fechado</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_w9" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_w9" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_formation">
+        <span class="doc-name" id="lbl-doc_formation">2. Certificado de Formación (Certificate of Formation) de Nueva Jersey</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_formation" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_formation" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_ein">
+        <span class="doc-name" id="lbl-doc_ein">3. Formulario SS-4 del IRS o carta del IRS que verifique su EIN</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_ein" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_ein" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_coi">
+        <span class="doc-name" id="lbl-doc_coi">4. Certificado de seguro vigente</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_coi" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_coi" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_payroll">
+        <span class="doc-name" id="lbl-doc_payroll">5. Comprobante de procesamiento de nómina</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_payroll" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_payroll" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_nj927">
+        <span class="doc-name" id="lbl-doc_nj927">6. Copias del NJ-927 presentado (Informe Trimestral del Empleador)</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_nj927" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_nj927" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+      <div class="doc-row" role="radiogroup" aria-labelledby="lbl-doc_wr30">
+        <span class="doc-name" id="lbl-doc_wr30">7. Copias del WR-30 presentado (Informe del Empleador sobre Salarios Pagados)</span>
+        <span class="doc-opts">
+          <label class="check-opt"><input type="radio" name="doc_wr30" value="Have" required> Lo tengo</label>
+          <label class="check-opt"><input type="radio" name="doc_wr30" value="Don't have"> No lo tengo</label>
+        </span>
+      </div>
+    </div>
+  </fieldset>
+
+  <div class="form-notice" data-none-notice role="status" hidden>
+    <p><strong>Hay un lugar para usted en el equipo de MPA.</strong></p>
+    <p>Los subcontratistas necesitan los documentos listados arriba para la preaprobación. Si aún no los tiene, lo invitamos a unirse a MPA Painters como empleado directo: pago W-2, trabajo todo el año y un siguiente paso en cada nivel.</p>
+    <p><a class="btn btn-red" href="/es/aplicar/">Solicite unirse a nuestro equipo</a></p>
   </div>
-  <label class="full">Mensaje<span class="req">*</span>    <textarea name="message" rows="5" required></textarea></label>
+
+  <fieldset>
+    <label class="full">Algo que debamos saber
+      <textarea maxlength="1500" name="message" rows="3"></textarea></label>
+  </fieldset>
+
   <div class="form-actions">
-    <button class="btn btn-red" type="submit">Iniciar precalificación</button>
+    <button class="btn btn-red" type="submit">Enviar para revisión</button>
     <span class="form-status" role="status" aria-live="polite"></span>
   </div>
-  <p class="small form-fallback">¿Prefiere escribir? <a href="mailto:subcompliance@mpapainters.com?subject=Iniciar%20precalificaci%C3%B3n">subcompliance@mpapainters.com</a></p>
-</form>        <p class="small">Le responderemos con la lista de documentos y el Contrato Maestro de Subcontratista.</p>
-      </div>
+  <p class="small form-fallback">¿Prefiere escribir? <a href="mailto:subcompliance@mpapainters.com?subject=Precalificaci%C3%B3n%20de%20subcontratistas">subcompliance@mpapainters.com</a></p>
+</form>      </div>
     </div>
   </div>
 </section>

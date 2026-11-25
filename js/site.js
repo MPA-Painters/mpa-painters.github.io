@@ -129,7 +129,7 @@
   document.querySelectorAll('form.web-form').forEach(function (f) {
     var tf = f.querySelector('input[name=t]');
     if (tf) tf.value = String(Date.now());
-    var isApp = f.hasAttribute('data-application');
+    var isApp = f.hasAttribute('data-application') || f.hasAttribute('data-validate');  // forms validated field by field
     if (isApp) {
       // ?role=N (0-based) from the careers page preselects the position; signature date defaults to today
       var rm = /[?&]role=(\d)/.exec(location.search), sel = f.querySelector('select[name=role]');
@@ -155,6 +155,20 @@
         });
         sync();
       });
+      // subcontractor prequalification: "Don't have" on every Step 1 document shows the not-qualified notice and blocks submit
+      var notice = f.querySelector('[data-none-notice]');
+      if (notice) {
+        var docNames = [];
+        f.querySelectorAll('.doc-row input[type=radio]').forEach(function (r) { if (docNames.indexOf(r.name) < 0) docNames.push(r.name); });
+        var syncNotice = function () {
+          var none = docNames.every(function (n) { var c = f.querySelector('input[name="' + n + '"]:checked'); return c && c.value !== 'Have'; });
+          notice.hidden = !none;
+          f.querySelector('button[type=submit]').disabled = none;
+          return none;
+        };
+        f.addEventListener('change', function () { var was = notice.hidden; if (syncNotice() && was) notice.scrollIntoView({ block: 'center' }); });
+        syncNotice();
+      }
       var sd = f.querySelector('input[name=sign_date]'), now = new Date();
       if (sd && !sd.value) sd.value = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
     }

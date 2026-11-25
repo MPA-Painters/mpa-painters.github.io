@@ -393,6 +393,14 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .web-form label.check-opt { display: inline-flex; align-items: center; gap: .55rem; font-weight: 400; font-size: 1rem; }
 .web-form label.check-opt input[type=checkbox] { margin: 0; }
 .check-group > input[type=text] { max-width: 360px; margin-top: .75rem; }
+.web-form input[type=radio] { display: inline-block; width: 1.15rem; height: 1.15rem; margin: 0; padding: 0; flex: none; accent-color: var(--navy); }
+.form-notice { margin: 0 0 1.75rem; padding: 1.1rem 1.35rem; border-left: 4px solid var(--navy); background: var(--sky-2); border-radius: var(--r-lg); }
+.form-notice > :last-child { margin-bottom: 0; }
+.doc-list { border-top: 1.5px solid var(--line); }
+.doc-row { display: flex; align-items: center; justify-content: space-between; gap: .75rem 1.5rem; flex-wrap: wrap; padding: .8rem 0; border-bottom: 1.5px solid var(--line); }
+.doc-name { flex: 1 1 16rem; font-weight: 600; color: var(--navy-3); }
+.doc-opts { display: inline-flex; gap: 1.25rem; flex: none; }
+.web-form fieldset:has(> label.full:only-child) { margin-bottom: .5rem; }
 .wrap-narrow { max-width: 860px; }
 @media (max-width: 640px) { .form-grid, .form-grid-3 { grid-template-columns: 1fr; } }
 .map iframe { width: 100%; aspect-ratio: 16 / 10; border: 0; border-radius: var(--r-lg); }
@@ -467,3 +475,4 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
   .hero h1 .w > span { transform: none; }
   .hero .lead, .hero .btn-row, .hero .eyebrow, .hero-scene { opacity: 1; }
 }
+.web-form .btn[disabled] { opacity: .45; cursor: not-allowed; box-shadow: none; transform: none; }
