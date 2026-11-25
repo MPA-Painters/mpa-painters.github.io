@@ -140,6 +140,21 @@
         function sync() { other.hidden = !cb.checked; if (!cb.checked) other.value = ''; }
         cb.addEventListener('change', function () { sync(); if (cb.checked) other.focus(); }); sync();
       });
+      // required checkbox group: at least one box; a [data-exclusive] box ("None") clears the others and vice versa
+      f.querySelectorAll('[data-require-one]').forEach(function (g) {
+        var boxes = g.querySelectorAll('input[type=checkbox]');
+        function sync() {
+          var any = g.querySelector('input:checked');
+          boxes[0].setCustomValidity(any ? '' : 'required');
+        }
+        boxes.forEach(function (b) {
+          b.addEventListener('change', function () {
+            if (b.checked) boxes.forEach(function (o) { if (o !== b && (b.hasAttribute('data-exclusive') || o.hasAttribute('data-exclusive'))) o.checked = false; });
+            sync();
+          });
+        });
+        sync();
+      });
       var sd = f.querySelector('input[name=sign_date]'), now = new Date();
       if (sd && !sd.value) sd.value = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
     }

@@ -161,12 +161,13 @@
     </select></label>
 
             <div class="check-group" role="group" aria-labelledby="lbl-certs">
-              <span class="group-label" id="lbl-certs">Safety certifications</span>
+              <span class="group-label" id="lbl-certs">Safety certifications<span class="req">*</span></span>
               <span class="form-hint">Check all that apply.</span>
-              <div class="check-row">
+              <div class="check-row" data-require-one>
                 <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 10"> OSHA 10</label>
                 <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 30"> OSHA 30</label>
                 <label class="check-opt"><input type="checkbox" name="osha" value="NY SST"> NY SST</label>
+                <label class="check-opt"><input type="checkbox" name="osha" value="None" data-exclusive> None</label>
               </div>
             </div>
             <div class="check-group" role="group" aria-labelledby="lbl-langs">
