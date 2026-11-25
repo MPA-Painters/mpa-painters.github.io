@@ -30,6 +30,11 @@
     <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/empleo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/careers/"/>
   </url>
+  <url><loc>https://mpapainters.com/apply/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/apply/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/aplicar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/apply/"/>
+  </url>
   <url><loc>https://mpapainters.com/subcontractors/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/subcontractors/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/subcontratistas/"/>
@@ -69,6 +74,11 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/careers/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/empleo/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/careers/"/>
+  </url>
+  <url><loc>https://mpapainters.com/es/aplicar/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/apply/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://mpapainters.com/es/aplicar/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mpapainters.com/apply/"/>
   </url>
   <url><loc>https://mpapainters.com/es/subcontratistas/</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://mpapainters.com/subcontractors/"/>

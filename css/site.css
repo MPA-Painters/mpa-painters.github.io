@@ -350,6 +350,8 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .role-item[open] summary::after { transform: rotate(45deg); }
 .role-body { padding: 0 1.75rem 1.75rem; }
 .role-body > :last-child { margin-bottom: 0; }
+.role-comp { margin: 1.25rem 0; padding: 1.1rem 1.35rem; border-left: 4px solid var(--red); background: var(--sky-2); border-radius: var(--r-lg); }
+.role-comp > :last-child { margin-bottom: 0; }
 
 /* ---------- contact ---------- */
 .contact-card { background: #fff; border-radius: var(--r-lg); padding: 1.75rem 2rem; box-shadow: var(--shadow); margin-bottom: 1.5rem; position: relative; overflow: hidden; }
@@ -375,7 +377,16 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .form-fallback { margin: 1rem 0 0; }
 .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .web-form.is-sent .form-grid, .web-form.is-sent label.full, .web-form.is-sent .form-actions .btn { display: none; }
-@media (max-width: 640px) { .form-grid { grid-template-columns: 1fr; } }
+.web-form fieldset { border: 0; padding: 0; margin: 0 0 2rem; min-width: 0; }
+.web-form legend { font-family: var(--font-display); font-weight: 700; font-size: 1.3rem; color: var(--navy-3); padding: 0; margin-bottom: .9rem; }
+.web-form .form-hint { font-size: .95rem; margin: 0 0 .5rem; }
+.web-form .form-sub { font-family: var(--font-display); font-weight: 600; color: var(--red); font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; margin: 1.1rem 0 .5rem; }
+.form-grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+.web-form label.certify { display: flex; align-items: flex-start; gap: .75rem; font-weight: 400; margin-bottom: 1.25rem; }
+.web-form input[type=checkbox] { display: inline-block; width: 1.15rem; height: 1.15rem; margin: .2rem 0 0; padding: 0; flex: none; accent-color: var(--navy); }
+.web-form.is-sent fieldset { display: none; }
+.wrap-narrow { max-width: 860px; }
+@media (max-width: 640px) { .form-grid, .form-grid-3 { grid-template-columns: 1fr; } }
 .map iframe { width: 100%; aspect-ratio: 16 / 10; border: 0; border-radius: var(--r-lg); }
 .cta-band { background: linear-gradient(120deg, var(--navy) 0%, var(--navy-3) 60%, var(--navy-4) 100%); color: #fff; border-radius: var(--r-lg); padding: clamp(2rem, 4vw, 3.5rem); display: flex; align-items: center; justify-content: space-between; gap: 2rem; position: relative; overflow: hidden; }
 .cta-band::before { content: ""; position: absolute; width: 40vw; height: 40vw; border-radius: 50%; background: var(--sky); filter: blur(80px); opacity: .25; right: -15vw; top: -20vw; }

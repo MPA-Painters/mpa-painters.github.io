@@ -129,11 +129,24 @@
   document.querySelectorAll('form.web-form').forEach(function (f) {
     var tf = f.querySelector('input[name=t]');
     if (tf) tf.value = String(Date.now());
+    var isApp = f.hasAttribute('data-application');
+    if (isApp) {
+      // ?role=N (0-based) from the careers page preselects the position; signature date defaults to today
+      var rm = /[?&]role=(\d)/.exec(location.search), sel = f.querySelector('select[name=role]');
+      if (rm && sel && sel.options[+rm[1] + 1]) sel.selectedIndex = +rm[1] + 1;
+      var sd = f.querySelector('input[name=sign_date]'), now = new Date();
+      if (sd && !sd.value) sd.value = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
+    }
     f.addEventListener('submit', function (e) {
       e.preventDefault();
       var status = f.querySelector('.form-status'), btn = f.querySelector('button[type=submit]');
       var data = {};
       new FormData(f).forEach(function (v, k) { data[k] = v; });
+      if (isApp && !f.checkValidity()) {
+        status.textContent = f.getAttribute('data-msg-invalid'); status.className = 'form-status is-error';
+        var bad = f.querySelector('input:invalid, select:invalid, textarea:invalid'); if (bad) bad.focus();
+        return;
+      }
       if (!data.name || !data.email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(data.email) || (f.querySelector('textarea[required]') && !data.message)) {
         status.textContent = f.getAttribute('data-msg-invalid'); status.className = 'form-status is-error'; return;
       }
