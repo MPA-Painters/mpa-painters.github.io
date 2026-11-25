@@ -147,19 +147,32 @@
       <option value="No">No</option>
     </select></label>
 
-            <label>Tarjeta OSHA<select name="osha">
-              <option value="">Seleccione</option>
-              <option value="None">Ninguna</option>
-              <option value="OSHA 10">OSHA 10</option>
-              <option value="OSHA 30">OSHA 30</option>
-            </select></label>
-            <label>Idiomas que habla<input type="text" maxlength="200" name="languages"></label>
                 <label>Licencia de conducir vigente<select name="drivers_license">
       <option value="">Seleccione</option>
       <option value="Yes">Sí</option>
       <option value="No">No</option>
     </select></label>
 
+            <div class="check-group" role="group" aria-labelledby="lbl-certs">
+              <span class="group-label" id="lbl-certs">Certificaciones de seguridad</span>
+              <span class="form-hint">Marque todo lo que corresponda.</span>
+              <div class="check-row">
+                <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 10"> OSHA 10</label>
+                <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 30"> OSHA 30</label>
+                <label class="check-opt"><input type="checkbox" name="osha" value="NY SST"> NY SST</label>
+              </div>
+            </div>
+            <div class="check-group" role="group" aria-labelledby="lbl-langs">
+              <span class="group-label" id="lbl-langs">Idiomas que habla</span>
+              <span class="form-hint">Marque todo lo que corresponda.</span>
+              <div class="check-row">
+                <label class="check-opt"><input type="checkbox" name="languages" value="English"> Inglés</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Spanish"> Español</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Portuguese"> Portugués</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Other" data-other-toggle="languages_other"> Otro</label>
+              </div>
+              <input type="text" maxlength="200" name="languages_other" placeholder="Otro idioma" aria-label="Otro idioma" hidden>
+            </div>
           </div>
         </fieldset>
 

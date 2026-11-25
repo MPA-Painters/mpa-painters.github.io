@@ -385,6 +385,14 @@ h3 { font-size: clamp(1.35rem, 2vw, 1.75rem); font-weight: 600; letter-spacing: 
 .web-form label.certify { display: flex; align-items: flex-start; gap: .75rem; font-weight: 400; margin-bottom: 1.25rem; }
 .web-form input[type=checkbox] { display: inline-block; width: 1.15rem; height: 1.15rem; margin: .2rem 0 0; padding: 0; flex: none; accent-color: var(--navy); }
 .web-form.is-sent fieldset { display: none; }
+.web-form [hidden] { display: none; }
+.check-group { grid-column: 1 / -1; }
+.check-group .group-label { display: block; font-weight: 600; font-size: .95rem; color: var(--navy-3); }
+.check-group .form-hint { display: block; margin: .1rem 0 .5rem; }
+.check-row { display: flex; flex-wrap: wrap; gap: .6rem 1.5rem; }
+.web-form label.check-opt { display: inline-flex; align-items: center; gap: .55rem; font-weight: 400; font-size: 1rem; }
+.web-form label.check-opt input[type=checkbox] { margin: 0; }
+.check-group > input[type=text] { max-width: 360px; margin-top: .75rem; }
 .wrap-narrow { max-width: 860px; }
 @media (max-width: 640px) { .form-grid, .form-grid-3 { grid-template-columns: 1fr; } }
 .map iframe { width: 100%; aspect-ratio: 16 / 10; border: 0; border-radius: var(--r-lg); }

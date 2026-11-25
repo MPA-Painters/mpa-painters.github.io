@@ -154,19 +154,32 @@
       <option value="No">No</option>
     </select></label>
 
-            <label>OSHA card<select name="osha">
-              <option value="">Select</option>
-              <option value="None">None</option>
-              <option value="OSHA 10">OSHA 10</option>
-              <option value="OSHA 30">OSHA 30</option>
-            </select></label>
-            <label>Languages spoken<input type="text" maxlength="200" name="languages"></label>
                 <label>Valid driver&#39;s license<select name="drivers_license">
       <option value="">Select</option>
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select></label>
 
+            <div class="check-group" role="group" aria-labelledby="lbl-certs">
+              <span class="group-label" id="lbl-certs">Safety certifications</span>
+              <span class="form-hint">Check all that apply.</span>
+              <div class="check-row">
+                <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 10"> OSHA 10</label>
+                <label class="check-opt"><input type="checkbox" name="osha" value="OSHA 30"> OSHA 30</label>
+                <label class="check-opt"><input type="checkbox" name="osha" value="NY SST"> NY SST</label>
+              </div>
+            </div>
+            <div class="check-group" role="group" aria-labelledby="lbl-langs">
+              <span class="group-label" id="lbl-langs">Languages spoken</span>
+              <span class="form-hint">Check all that apply.</span>
+              <div class="check-row">
+                <label class="check-opt"><input type="checkbox" name="languages" value="English"> English</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Spanish"> Spanish</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Portuguese"> Portuguese</label>
+                <label class="check-opt"><input type="checkbox" name="languages" value="Other" data-other-toggle="languages_other"> Other</label>
+              </div>
+              <input type="text" maxlength="200" name="languages_other" placeholder="Other language" aria-label="Other language" hidden>
+            </div>
           </div>
         </fieldset>
 

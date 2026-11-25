@@ -134,6 +134,12 @@
       // ?role=N (0-based) from the careers page preselects the position; signature date defaults to today
       var rm = /[?&]role=(\d)/.exec(location.search), sel = f.querySelector('select[name=role]');
       if (rm && sel && sel.options[+rm[1] + 1]) sel.selectedIndex = +rm[1] + 1;
+      // "Other" checkbox reveals its fill-in field
+      f.querySelectorAll('input[data-other-toggle]').forEach(function (cb) {
+        var other = f.querySelector('input[name=' + cb.getAttribute('data-other-toggle') + ']');
+        function sync() { other.hidden = !cb.checked; if (!cb.checked) other.value = ''; }
+        cb.addEventListener('change', function () { sync(); if (cb.checked) other.focus(); }); sync();
+      });
       var sd = f.querySelector('input[name=sign_date]'), now = new Date();
       if (sd && !sd.value) sd.value = now.getFullYear() + '-' + ('0' + (now.getMonth() + 1)).slice(-2) + '-' + ('0' + now.getDate()).slice(-2);
     }
@@ -141,7 +147,8 @@
       e.preventDefault();
       var status = f.querySelector('.form-status'), btn = f.querySelector('button[type=submit]');
       var data = {};
-      new FormData(f).forEach(function (v, k) { data[k] = v; });
+      // checkbox groups share a name: join the checked values
+      new FormData(f).forEach(function (v, k) { data[k] = (k in data && data[k] !== '') ? data[k] + ', ' + v : v; });
       if (isApp && !f.checkValidity()) {
         status.textContent = f.getAttribute('data-msg-invalid'); status.className = 'form-status is-error';
         var bad = f.querySelector('input:invalid, select:invalid, textarea:invalid'); if (bad) bad.focus();
